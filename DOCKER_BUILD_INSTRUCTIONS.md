@@ -20,17 +20,17 @@ docker build -t auth-service:1.0 -f auth-service/Dockerfile auth-service
 mvn -f users-service/pom.xml clean package -DskipTests
 docker build -t users-service:1.0 -f users-service/Dockerfile users-service
 ## Transactions Service
-mvn clean package -DskipTests
-docker build -t transactions-service:1.0 .
+mvn -f transactions-service/pom.xml clean package -DskipTests
+docker build -t transactions-service:1.0 -f transactions-service/Dockerfile transactions-service
 
 ## Aadhar Service
-mvn clean package -DskipTests
-docker build -t aadhar-service:1.0 .
+mvn -f aadhar-service/pom.xml clean package -DskipTests
+docker build -t aadhar-service:1.0 -f aadhar-service/Dockerfile aadhar-service
 
 ## Company Service
-mvn clean package -DskipTests
-docker build -t company-service:1.0 .
+mvn -f company-service/pom.xml clean package -DskipTests
+docker build -t company-service:1.0 -f company-service/Dockerfile company-service
 
 ## Payment Gateway Service
-mvn clean package -DskipTests
-docker build -t payment-gateway-service:1.0 .
+mvn -f payment-gateway-service/pom.xml clean package -DskipTests
+docker build -t payment-gateway-service:1.0 -f payment-gateway-service/Dockerfile payment-gateway-service
